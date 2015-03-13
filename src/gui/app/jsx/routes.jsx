@@ -23,8 +23,12 @@ var Root = require("./views/FreeNASWebApp");
 
   var Tasks        = require("./views/Tasks");
 
-  var Interfaces      = require("./views/Interfaces");
-    var InterfaceItem = require("./views/Networks/InterfacesItem");
+  var Networks           = require("./views/Networks");
+    var Interfaces       = require("./views/Networks/Interfaces");
+      var InterfaceItem  = require("./views/Networks/Interfaces/InterfaceItem");
+    
+    // There is already a variable named DefaultRoute. 
+    var DefaultRouteView = require("./views/Networks/DefaultRoute");
 
   var Storage      = require("./views/Storage");
   var Sharing      = require("./views/Sharing");
@@ -63,13 +67,21 @@ module.exports = (
 
     <Route name="tasks" handler={ Tasks } />
 
-      <Route name    = "networks"
-             path    = "networks"
-             handler = { Interfaces } >
+    {/* NETWORKS */}
+    <Route name="networks" handler={ Networks }>
+      <DefaultRoute handler={ Interfaces } />
+      <Route name  = "interfaces"
+           path    = "/networks/interfaces"
+           handler = { Interfaces } >
         <Route name    = "interfaces-editor"
-               path    = "/networks/:interfaceID"
+               path    = "/networks/interfaces/:interfaceID"
                handler = { InterfaceItem } />
       </Route>
+      <Route name    = "default-route"
+             path    = "/networks/defaultroute"
+             handler = { DefaultRouteView } >
+      </Route>
+    </Route>
 
     <Route name="storage" handler={ Storage } />
     <Route name="sharing" handler={ Sharing } />

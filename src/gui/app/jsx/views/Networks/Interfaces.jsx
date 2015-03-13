@@ -1,6 +1,6 @@
 // Interfaces
 // ==========
-// View showing Interface information such as link state and MAC address.
+// View showing interface information such as link state and aliases.
 
 "use strict";
 
@@ -9,13 +9,13 @@ var React  = require("react");
 var Router       = require("react-router");
 var RouteHandler = Router.RouteHandler;
 
-var Viewer      = require("../components/Viewer");
+var Viewer      = require("../../components/Viewer");
 
-var NetworksMiddleware = require("../middleware/NetworksMiddleware");
-var InterfacesStore      = require("../stores/InterfacesStore");
+var NetworksMiddleware = require("../../middleware/NetworksMiddleware");
+var InterfacesStore      = require("../../stores/InterfacesStore");
 
 var viewData = {
-    format  : require("../../data/middleware-keys/interfaces-display.json")[0]
+    format  : require("../../../data/middleware-keys/interfaces-display.json")[0]
   , routing : {
       "route" : "interfaces-editor"
     , "param" : "interfaceID"
@@ -73,7 +73,7 @@ var Interfaces = React.createClass({
   }
 
   , render: function() {
-      return <Viewer header      = { "Interfaces" }
+      return <Viewer header      = { "Networks" }
                      inputData   = { this.state.interfacesList }
                      viewData    = { viewData }
                      Editor      = { RouteHandler } />;

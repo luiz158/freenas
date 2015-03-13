@@ -1,5 +1,5 @@
 // Interface Item Template
-// ========================
+// =======================
 // Handles viewing and and changing of network interfaces.
 
 "use strict";
@@ -8,12 +8,12 @@
 var React  = require("react");
 var Router = require("react-router");
 
-var viewerUtil = require("../../components/Viewer/viewerUtil");
-// var editorUtil = require("../../components/Viewer/Editor/editorUtil");
-var activeRoute = require("../../components/Viewer/mixins/activeRoute");
+var viewerUtil = require("../../../components/Viewer/viewerUtil");
+// var editorUtil = require("../../../components/Viewer/Editor/editorUtil");
+var activeRoute = require("../../../components/Viewer/mixins/activeRoute");
 
-// var NetworksMiddleware = require("../../middleware/NetworksMiddleware");
-var InterfacesStore      = require("../../stores/InterfacesStore");
+// var NetworksMiddleware = require("../../../middleware/NetworksMiddleware");
+var InterfacesStore      = require("../../../stores/InterfacesStore");
 
 var TWBS  = require("react-bootstrap");
 // var Icon   = require("../../components/Icon");
@@ -91,8 +91,8 @@ var InterfaceItem = React.createClass({
   , getInitialState: function() {
       return {
           targetInterface : this.getInterfaceFromStore()
-        , currentMode   : "view"
-        , activeRoute   : this.getActiveRoute()
+        , currentMode     : "view"
+        , activeRoute     : this.getActiveRoute()
       };
     }
 
@@ -102,8 +102,8 @@ var InterfaceItem = React.createClass({
       if ( activeRoute !== prevState.activeRoute ) {
         this.setState({
             targetInterface : this.getInterfaceFromStore()
-          , currentMode   : "view"
-          , activeRoute   : activeRoute
+          , currentMode     : "view"
+          , activeRoute     : activeRoute
         });
       }
     }
