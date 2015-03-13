@@ -1,7 +1,6 @@
-// Networks
-// ========
-// View showing network information, link state, VLANs, and other entities.
-// For now, just interfaces.
+// Interfaces
+// ==========
+// View showing Interface information such as link state and MAC address.
 
 "use strict";
 
@@ -13,13 +12,13 @@ var RouteHandler = Router.RouteHandler;
 var Viewer      = require("../components/Viewer");
 
 var NetworksMiddleware = require("../middleware/NetworksMiddleware");
-var NetworksStore      = require("../stores/NetworksStore");
+var InterfacesStore      = require("../stores/InterfacesStore");
 
 var viewData = {
-    format  : require("../../data/middleware-keys/networks-display.json")[0]
+    format  : require("../../data/middleware-keys/interfaces-display.json")[0]
   , routing : {
-      "route" : "networks-editor"
-    , "param" : "networksID"
+      "route" : "interfaces-editor"
+    , "param" : "interfaceID"
   }
   , display : {
       filterCriteria: {
@@ -46,40 +45,40 @@ var viewData = {
   }
 };
 
-function getNetworksFromStore() {
+function getInterfacesFromStore() {
   return {
-    networksList : NetworksStore.getAllNetworks()
+    interfacesList : InterfacesStore.getAllInterfaces()
   };
 }
 
-var Networks = React.createClass({
+var Interfaces = React.createClass({
 
     getInitialState: function() {
-      return getNetworksFromStore();
+      return getInterfacesFromStore();
     }
 
   , componentDidMount: function() {
-    NetworksStore.addChangeListener( this.handleNetworksChange );
-    NetworksMiddleware.requestNetworksList();
+    InterfacesStore.addChangeListener( this.handleInterfacesChange );
+    NetworksMiddleware.requestInterfacesList();
     NetworksMiddleware.subscribe();
   }
 
   , componentWillUnmount: function() {
-    NetworksStore.removeChangeListener( this.handleNetworksChange );
+    InterfacesStore.removeChangeListener( this.handleInterfacesChange );
     NetworksMiddleware.unsubscribe();
   }
 
-  , handleNetworksChange: function() {
-      this.setState( getNetworksFromStore() );
+  , handleInterfacesChange: function() {
+      this.setState( getInterfacesFromStore() );
   }
 
   , render: function() {
-      return <Viewer header      = { "Networks" }
-                     inputData   = { this.state.networksList }
+      return <Viewer header      = { "Interfaces" }
+                     inputData   = { this.state.interfacesList }
                      viewData    = { viewData }
                      Editor      = { RouteHandler } />;
     }
 
 });
 
-module.exports = Networks;
+module.exports = Interfaces;

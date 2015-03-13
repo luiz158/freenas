@@ -1,5 +1,5 @@
-// Networks Item Template
-// ======================
+// Interface Item Template
+// ========================
 // Handles viewing and and changing of network interfaces.
 
 "use strict";
@@ -13,12 +13,12 @@ var viewerUtil = require("../../components/Viewer/viewerUtil");
 var activeRoute = require("../../components/Viewer/mixins/activeRoute");
 
 // var NetworksMiddleware = require("../../middleware/NetworksMiddleware");
-var NetworksStore      = require("../../stores/NetworksStore");
+var InterfacesStore      = require("../../stores/InterfacesStore");
 
 var TWBS  = require("react-bootstrap");
 // var Icon   = require("../../components/Icon");
 
-var NetworksView = React.createClass({
+var InterfaceView = React.createClass({
 
     propTypes: {
       item: React.PropTypes.object.isRequired
@@ -80,7 +80,7 @@ var NetworksView = React.createClass({
 
 });
 
-var NetworkItem = React.createClass({
+var InterfaceItem = React.createClass({
 
     propTypes: {
         viewData : React.PropTypes.object.isRequired
@@ -90,7 +90,7 @@ var NetworkItem = React.createClass({
 
   , getInitialState: function() {
       return {
-          targetNetwork : this.getNetworkFromStore()
+          targetInterface : this.getInterfaceFromStore()
         , currentMode   : "view"
         , activeRoute   : this.getActiveRoute()
       };
@@ -101,7 +101,7 @@ var NetworkItem = React.createClass({
 
       if ( activeRoute !== prevState.activeRoute ) {
         this.setState({
-            targetNetwork : this.getNetworkFromStore()
+            targetInterface : this.getInterfaceFromStore()
           , currentMode   : "view"
           , activeRoute   : activeRoute
         });
@@ -109,19 +109,19 @@ var NetworkItem = React.createClass({
     }
 
   , componentDidMount: function() {
-      NetworksStore.addChangeListener( this.updateNetworkInState );
+      InterfacesStore.addChangeListener( this.updateInterfaceInState );
     }
 
   , componentWillUnmount: function() {
-      NetworksStore.removeChangeListener( this.updateNetworkInState );
+      InterfacesStore.removeChangeListener( this.updateInterfaceInState );
     }
 
-  , getNetworkFromStore: function() {
-      return NetworksStore.findNetworkByKeyValue( this.props.viewData.format["selectionKey"], this.getActiveRoute() );
+  , getInterfaceFromStore: function() {
+      return InterfacesStore.findInterfaceByKeyValue( this.props.viewData.format["selectionKey"], this.getActiveRoute() );
     }
 
-  , updateNetworkInState: function() {
-      this.setState({ targetNetwork: this.getNetworkFromStore() });
+  , updateInterfaceInState: function() {
+      this.setState({ targetInterface: this.getInterfaceFromStore() });
     }
 
   , handleViewChange: function ( nextMode, event ) {
@@ -135,7 +135,7 @@ var NetworkItem = React.createClass({
         switch ( this.state.currentMode ) {
         default:
         case "view":
-          DisplayComponent = NetworksView;
+          DisplayComponent = InterfaceView;
           break;
       }
 
@@ -143,7 +143,7 @@ var NetworkItem = React.createClass({
         <div className="viewer-item-info">
 
         <DisplayComponent handleViewChange = { this.handleViewChange }
-                          item             = { this.state.targetNetwork }
+                          item             = { this.state.targetInterface }
                           dataKeys         = { this.props.viewData.format["dataKeys"] } />
 
       </div>
@@ -152,4 +152,4 @@ var NetworkItem = React.createClass({
 
 });
 
-module.exports = NetworkItem;
+module.exports = InterfaceItem;

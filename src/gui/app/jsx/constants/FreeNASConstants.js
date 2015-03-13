@@ -40,9 +40,9 @@ module.exports = {
       , RECEIVE_UPDATE_DATA : null
 
       //Networks
-      , RECEIVE_RAW_NETWORKS        : null
-      , RECEIVE_NETWORK_UPDATE_TASK : null
-      , RESOLVE_NETWORK_UPDATE_TASK : null
+      , RECEIVE_RAW_INTERFACES        : null
+      , RECEIVE_INTERFACE_UPDATE_TASK : null
+      , RESOLVE_INTERFACE_UPDATE_TASK : null
     })
 
   , PayloadSources: keyMirror({

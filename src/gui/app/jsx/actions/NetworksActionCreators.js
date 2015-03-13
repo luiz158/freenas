@@ -1,5 +1,5 @@
 // Networks Action Creators
-// =======================
+// ========================
 
 "use strict";
 
@@ -10,10 +10,10 @@ var ActionTypes = FreeNASConstants.ActionTypes;
 
 module.exports = {
 
-    receiveNetworksList: function( rawNetworksList ) {
+    receiveInterfacesList: function( rawInterfacesList ) {
       FreeNASDispatcher.handleMiddlewareAction({
-          type            : ActionTypes.RECEIVE_RAW_NETWORKS
-        , rawNetworksList : rawNetworksList
+          type              : ActionTypes.RECEIVE_RAW_INTERFACES
+        , rawInterfacesList : rawInterfacesList
       });
     }
 

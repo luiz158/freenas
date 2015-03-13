@@ -10,19 +10,19 @@ var NetworksActionCreators = require("../actions/NetworksActionCreators");
 module.exports = {
 
     subscribe: function() {
-      MiddlewareClient.subscribe( ["networks.changed"] );
+      MiddlewareClient.subscribe( ["network.interface.changed"] );
       MiddlewareClient.subscribe( ["task.*"] );
     }
 
   , unsubscribe: function() {
-      MiddlewareClient.unsubscribe( ["networks.changed"] );
+      MiddlewareClient.unsubscribe( ["network.interface.changed"] );
       MiddlewareClient.unsubscribe( ["task.*"] );
     }
 
 
-  , requestNetworksList: function() {
-      MiddlewareClient.request( "network.interfaces.query", [], function ( rawNetworksList ) {
-        NetworksActionCreators.receiveNetworksList( rawNetworksList );
+  , requestInterfacesList: function() {
+      MiddlewareClient.request( "network.interfaces.query", [], function ( rawInterfaceList ) {
+        NetworksActionCreators.receiveInterfacesList( rawInterfaceList );
       });
     }
 
