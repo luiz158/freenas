@@ -10,10 +10,10 @@ var ActionTypes = FreeNASConstants.ActionTypes;
 
 module.exports = {
 
-    receiveInterfacesList: function( rawInterfacesList ) {
+    receiveInterfacesList: function( interfacesList ) {
       FreeNASDispatcher.handleMiddlewareAction({
-          type              : ActionTypes.RECEIVE_RAW_INTERFACES
-        , rawInterfacesList : rawInterfacesList
+          type              : ActionTypes.RECEIVE_INTERFACES_LIST
+        , interfacesList : interfacesList
       });
     }
 

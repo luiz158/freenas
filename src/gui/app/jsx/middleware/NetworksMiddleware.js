@@ -19,10 +19,9 @@ module.exports = {
       MiddlewareClient.unsubscribe( ["task.*"] );
     }
 
-
   , requestInterfacesList: function() {
-      MiddlewareClient.request( "network.interfaces.query", [], function ( rawInterfaceList ) {
-        NetworksActionCreators.receiveInterfacesList( rawInterfaceList );
+      MiddlewareClient.request( "network.interfaces.query", [], function ( interfacesList ) {
+        NetworksActionCreators.receiveInterfacesList( interfacesList );
       });
     }
 
