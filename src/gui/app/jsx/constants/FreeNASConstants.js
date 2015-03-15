@@ -40,9 +40,18 @@ module.exports = {
       , RECEIVE_UPDATE_DATA : null
 
       //Networks
+      , RECEIVE_GLOBAL_CONFIG             : null
+      , RECEIVE_GLOBAL_CONFIG_UPDATE_TASK : null
+      , RESOLVE_GLOBAL_CONFIG_UPDATE_TASK : null
       , RECEIVE_INTERFACES_LIST           : null
       , RECEIVE_INTERFACE_UPDATE_TASK     : null
       , RESOLVE_INTERFACE_UPDATE_TASK     : null
+      , RECEIVE_HOSTS_LIST                : null
+      , RECEIVE_HOST_UPDATE_TASK          : null
+      , RESOLVE_HOST_UPDATE_TASK          : null
+      , RECEIVE_STATIC_ROUTES_LIST        : null
+      , RECEIVE_STATIC_ROUTE_UPDATE_TASK  : null
+      , RESOLVE_STATIC_ROUTE_UPDATE_TASK  : null
     })
 
   , PayloadSources: keyMirror({
