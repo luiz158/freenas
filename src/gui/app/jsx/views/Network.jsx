@@ -17,7 +17,7 @@ var sections = [{
     route   : "interfaces"
   , display : "Interfaces"
 },{
-    route   : "default-route"
+    route   : "globalconfig"
   , display : "Global Config"
 }];
 

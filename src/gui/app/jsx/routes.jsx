@@ -28,7 +28,7 @@ var Root = require("./views/FreeNASWebApp");
       var InterfaceItem  = require("./views/Network/Interfaces/InterfaceItem");
     
     // There is already a variable named DefaultRoute. 
-    var DefaultRouteView = require("./views/Network/DefaultRoute");
+    var GlobalConfig = require("./views/Network/GlobalConfig");
 
   var Storage      = require("./views/Storage");
   var Sharing      = require("./views/Sharing");
@@ -77,9 +77,9 @@ module.exports = (
                path    = "/network/interfaces/:interfaceID"
                handler = { InterfaceItem } />
       </Route>
-      <Route name    = "default-route"
-             path    = "/network/defaultroute"
-             handler = { DefaultRouteView } >
+      <Route name    = "globalconfig"
+             path    = "/networks/GlobalConfig"
+             handler = { GlobalConfig } >
       </Route>
     </Route>
 

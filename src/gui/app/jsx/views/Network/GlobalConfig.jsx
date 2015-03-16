@@ -14,14 +14,14 @@ var Viewer = require("../../components/Viewer");
 
 
 var itemData = {
-    "route" : "default-route"
+    "route" : "globalconfig"
   , "param" : "routeID"
 };
 
 var DefaultRoute = React.createClass({
     render: function() {
       return (
-        <Viewer header     = { "G" }
+        <Viewer header     = { "Global Config" }
                 inputData  = { inputData }
                 itemData   = { itemData }
                 Editor     = { RouteHandler } >

@@ -19,15 +19,15 @@ module.exports = {
       MiddlewareClient.unsubscribe( ["task.*"] );
     }
 
-  , requestInterfacesList: function() {
-      MiddlewareClient.request( "network.interfaces.query", [], function ( interfacesList ) {
-        NetworkActionCreators.receiveInterfacesList( interfacesList );
-      });
-    }
-
   , requestGlobalConfig: function() {
       MiddlewareClient.request( "network.config.get_global_config", [], function ( globalConfig ) {
         NetworkActionCreators.receiveGlobalConfig( globalConfig );
+      });
+    }
+
+  , requestInterfacesList: function() {
+      MiddlewareClient.request( "network.interfaces.query", [], function ( interfacesList ) {
+        NetworkActionCreators.receiveInterfacesList( interfacesList );
       });
     }
 
