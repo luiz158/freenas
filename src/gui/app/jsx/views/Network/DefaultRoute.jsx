@@ -1,6 +1,6 @@
-// Default Route
+// Global Config
 // =============
-// Viewer and Editor for the default route.
+// Viewer and Editor for the global network configuration.
 
 "use strict";
 
@@ -21,7 +21,7 @@ var itemData = {
 var DefaultRoute = React.createClass({
     render: function() {
       return (
-        <Viewer header     = { "Default Route" }
+        <Viewer header     = { "G" }
                 inputData  = { inputData }
                 itemData   = { itemData }
                 Editor     = { RouteHandler } >

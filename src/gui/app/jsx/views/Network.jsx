@@ -18,10 +18,10 @@ var sections = [{
   , display : "Interfaces"
 },{
     route   : "default-route"
-  , display : "DefaultRoute"
+  , display : "Global Config"
 }];
 
-var Networks = React.createClass({
+var Network = React.createClass({
     render: function() {
       return (
         <main>
@@ -32,4 +32,4 @@ var Networks = React.createClass({
     }
 });
 
-module.exports = Networks;
+module.exports = Network;

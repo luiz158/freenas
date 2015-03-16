@@ -34,9 +34,9 @@ var paths = [
     , label   : "Tasks"
     , status  : null
   },{
-      path    : "networks"
+      path    : "network"
     , icon    : "moon-o"
-    , label   : "Networks"
+    , label   : "Network"
     , status  : null
   },{
       path    : "storage"

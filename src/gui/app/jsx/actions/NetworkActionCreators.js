@@ -1,5 +1,5 @@
-// Networks Action Creators
-// ========================
+// Network Action Creators
+// =======================
 
 "use strict";
 
