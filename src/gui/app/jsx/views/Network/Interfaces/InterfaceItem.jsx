@@ -12,7 +12,7 @@ var viewerUtil = require("../../../components/Viewer/viewerUtil");
 // var editorUtil = require("../../../components/Viewer/Editor/editorUtil");
 var activeRoute = require("../../../components/Viewer/mixins/activeRoute");
 
-// var NetworkMiddleware = require("../../../middleware/NetworkMiddleware");
+var InterfacesMiddleware = require("../../../middleware/InterfacesMiddleware");
 var InterfacesStore      = require("../../../stores/InterfacesStore");
 
 var TWBS  = require("react-bootstrap");

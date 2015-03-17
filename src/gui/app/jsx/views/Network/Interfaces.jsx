@@ -11,7 +11,7 @@ var RouteHandler = Router.RouteHandler;
 
 var Viewer      = require("../../components/Viewer");
 
-var NetworkMiddleware = require("../../middleware/NetworkMiddleware");
+var InterfacesMiddleware = require("../../middleware/InterfacesMiddleware");
 var InterfacesStore      = require("../../stores/InterfacesStore");
 
 var viewData = {
@@ -59,13 +59,13 @@ var Interfaces = React.createClass({
 
   , componentDidMount: function() {
     InterfacesStore.addChangeListener( this.handleInterfacesChange );
-    NetworkMiddleware.requestInterfacesList();
-    NetworkMiddleware.subscribe();
+    InterfacesMiddleware.requestInterfacesList();
+    InterfacesMiddleware.subscribe();
   }
 
   , componentWillUnmount: function() {
     InterfacesStore.removeChangeListener( this.handleInterfacesChange );
-    NetworkMiddleware.unsubscribe();
+    InterfacesMiddleware.unsubscribe();
   }
 
   , handleInterfacesChange: function() {
@@ -73,7 +73,7 @@ var Interfaces = React.createClass({
   }
 
   , render: function() {
-      return <Viewer header      = { "Networks" }
+      return <Viewer header      = { "Interfaces" }
                      inputData   = { this.state.interfacesList }
                      viewData    = { viewData }
                      Editor      = { RouteHandler } />;

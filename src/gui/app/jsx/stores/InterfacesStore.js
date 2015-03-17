@@ -9,7 +9,7 @@ var EventEmitter = require("events").EventEmitter;
 var FreeNASDispatcher = require("../dispatcher/FreeNASDispatcher");
 var FreeNASConstants  = require("../constants/FreeNASConstants");
 
-var NetworkMiddleware = require("../middleware/NetworkMiddleware");
+var InterfacesMiddleware = require("../middleware/InterfacesMiddleware");
 
 var ActionTypes  = FreeNASConstants.ActionTypes;
 var CHANGE_EVENT = "change";
