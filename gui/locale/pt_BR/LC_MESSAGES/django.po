@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-04 02:03-0700\n"
-"PO-Revision-Date: 2014-11-13 11:00+0000\n"
-"Last-Translator: rogerinho_g12 <rogerinho_g12@hotmail.com>\n"
+"PO-Revision-Date: 2015-05-08 05:38+0000\n"
+"Last-Translator: Thiago <thiagogoncalves@outlook.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.5.0\n"
-"X-POOTLE-MTIME: 1415876444.0\n"
+"X-POOTLE-MTIME: 1431063508.0\n"
 
 #: choices.py:40
 msgid "Plain"
@@ -9489,7 +9489,7 @@ msgstr ""
 
 #: storage/models.py:951
 msgid "Sending"
-msgstr ""
+msgstr "Enviando"
 
 #: storage/views.py:980
 #, fuzzy
@@ -10523,7 +10523,6 @@ msgid "Basic Authentication"
 msgstr "Autenticação básica"
 
 #: choices.py:44
-#, fuzzy
 msgid "Digest Authentication"
 msgstr "Autenticação sintética"
 
@@ -11847,15 +11846,13 @@ msgid ""
 msgstr ""
 
 #: templates/system/update_check.html:32
-#, fuzzy
 msgid "The system will reboot"
 msgstr "Sistema está reiniciando"
 
 #: choices.py:587
 #: choices.py:588
-#, fuzzy
 msgid "%(weeks)s weeks"
-msgstr "%(week)s semana"
+msgstr "%(weeks)s semanas"
 
 #: system/views.py:419
 #, fuzzy
